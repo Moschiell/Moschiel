@@ -90,27 +90,27 @@ header h1 {
 }
 
 .coracao-esquerda, .coracao-direita {
-    font-size: 5rem;
+    font-size: 6rem;
     position: absolute;
     transition: transform 0.5s ease-in-out;
 }
 
 .coracao-esquerda {
-    left: 0;
+    left: -60px; /* Ajuste para o coração esquerdo ficar no centro */
 }
 
 .coracao-direita {
-    right: 0;
+    right: -60px; /* Ajuste para o coração direito ficar no centro */
     transform: scaleX(-1); /* Inverter a metade direita */
 }
 
 /* Efeito de coração se partindo */
 .coracao.aberto .coracao-esquerda {
-    transform: translateX(-200px); /* Movendo para a esquerda */
+    transform: translateX(-300px); /* Movendo para a esquerda */
 }
 
 .coracao.aberto .coracao-direita {
-    transform: translateX(200px); /* Movendo para a direita */
+    transform: translateX(300px); /* Movendo para a direita */
 }
 
 /* Estilização da mensagem */
