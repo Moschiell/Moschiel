@@ -1,28 +1,20 @@
-// Função para calcular o tempo de namoro
-function calcularTempoNamoro(dataInicio) {
-    const agora = new Date();
-    const diferenca = agora - dataInicio; // Diferença em milissegundos
+// Função para criar estrelas
+function criarEstrelas() {
+    const fundoEstrelado = document.getElementById('fundo-estrelado');
+    const numeroEstrelas = 100; // Número de estrelas
 
-    // Converter a diferença para dias, meses e anos
-    const segundos = Math.floor(diferenca / 1000);
-    const minutos = Math.floor(segundos / 60);
-    const horas = Math.floor(minutos / 60);
-    const dias = Math.floor(horas / 24);
-    const meses = Math.floor(dias / 30);
-    const anos = Math.floor(meses / 12);
-
-    // Ajustar meses e dias restantes
-    const mesesRestantes = meses % 12;
-    const diasRestantes = dias % 30;
-
-    // Montar o texto do contador
-    let textoContador = '';
-    if (anos > 0) textoContador += `${anos} ano${anos > 1 ? 's' : ''}, `;
-    if (mesesRestantes > 0) textoContador += `${mesesRestantes} mes${mesesRestantes > 1 ? 'es' : ''}, `;
-    textoContador += `${diasRestantes} dia${diasRestantes > 1 ? 's' : ''}`;
-
-    return textoContador;
+    for (let i = 0; i < numeroEstrelas; i++) {
+        const estrela = document.createElement('div');
+        estrela.className = 'estrela';
+        estrela.style.top = `${Math.random() * 100}%`;
+        estrela.style.left = `${Math.random() * 100}%`;
+        estrela.style.animationDelay = `${Math.random() * 5}s`;
+        fundoEstrelado.appendChild(estrela);
+    }
 }
+
+// Adiciona estrelas ao carregar a página
+criarEstrelas();
 
 // Função para abrir o coração
 function abrirCoracao() {
