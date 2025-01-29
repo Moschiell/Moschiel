@@ -58,11 +58,46 @@ header h1 {
 /* Estilização da seção do coração */
 .coracao {
     position: absolute;
-    top: 60%; /* Coloca os corações abaixo da contagem */
+    top: 50%; /* Centraliza verticalmente abaixo da contagem */
     left: 50%;
-    transform: translateX(-50%); /* Centraliza */
+    transform: translate(-50%, -50%); /* Centraliza os corações na tela */
     display: flex;
-    flex-direction: column; /* Coloca os corações um em cima do outro */
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Corações sobrepostos */
+.coracao-esquerda,
+.coracao-direita {
+    font-size: 6rem;
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Ajuste para os corações ficarem sobrepostos */
+.coracao-esquerda {
+    left: 0;
+}
+
+.coracao-direita {
+    left: 0;
+    transform: scaleX(-1); /* Inverte a metade direita */
+}
+
+/* Efeito de separação do coração */
+.coracao.aberto .coracao-esquerda {
+    transform: translateX(-300px); /* Move para a esquerda */
+}
+
+.coracao.aberto .coracao-direita {
+    transform: translateX(300px); /* Move para a direita */
+}
+
+/* Estilização da mensagem */
+.coracao-mensagem {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
