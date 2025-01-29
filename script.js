@@ -1,53 +1,15 @@
-// Função para calcular o tempo de namoro
-function calcularTempoNamoro(dataInicio) {
+// Função para calcular o tempo passado desde o início do namoro
+function atualizarContagem() {
+    const dataInicio = new Date('2024-12-29'); // Data de início do namoro
     const agora = new Date();
-    const diferenca = agora - dataInicio; // Diferença em milissegundos
+    const tempoPassado = agora - dataInicio; // Tempo em milissegundos
 
-    // Converter a diferença para dias, meses e anos
-    const segundos = Math.floor(diferenca / 1000);
-    const minutos = Math.floor(segundos / 60);
-    const horas = Math.floor(minutos / 60);
-    const dias = Math.floor(horas / 24);
-    const meses = Math.floor(dias / 30);
-    const anos = Math.floor(meses / 12);
+    const dias = Math.floor(tempoPassado / (1000 * 60 * 60 * 24)); // Calcula dias
+    const horas = Math.floor((tempoPassado % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Calcula horas
 
-    // Ajustar meses e dias restantes
-    const mesesRestantes = meses % 12;
-    const diasRestantes = dias % 30;
-
-    // Montar o texto do contador
-    let textoContador = '';
-    if (anos > 0) textoContador += `${anos} ano${anos > 1 ? 's' : ''}, `;
-    if (mesesRestantes > 0) textoContador += `${mesesRestantes} mes${mesesRestantes > 1 ? 'es' : ''}, `;
-    textoContador += `${diasRestantes} dia${diasRestantes > 1 ? 's' : ''}`;
-
-    return textoContador;
+    document.getElementById('contador').textContent = `${dias} dias e ${horas} horas`;
 }
 
-// Função para abrir o coração
-function abrirCoracao() {
-    const coracao = document.querySelector('.coracao');
-    const coracaoMensagem = document.querySelector('.coracao-mensagem');
-    
-    // Alternar a classe aberto no coração para animar
-    coracao.classList.toggle('aberto');
-
-    // Mostrar ou esconder a mensagem
-    if (coracao.classList.contains('aberto')) {
-        coracaoMensagem.style.display = 'block';
-    } else {
-        coracaoMensagem.style.display = 'none';
-    }
-}
-
-// Configurar a data de início do namoro (ano, mês-1, dia)
-const dataInicioNamoro = new Date(2025, 0, 5); // 05 de janeiro de 2025
-
-// Atualizar o contador
-const contadorElemento = document.getElementById('contador');
-contadorElemento.textContent = calcularTempoNamoro(dataInicioNamoro);
-
-// Atualizar o contador a cada minuto
-setInterval(() => {
-    contadorElemento.textContent = calcularTempoNamoro(dataInicioNamoro);
-}, 60000); // 60000 milissegundos = 1 minuto
+// Atualiza a contagem a cada hora
+setInterval(atualizarContagem, 1000 * 60 * 60);
+atualizarContagem(); // Chama a função imediatamente para exibir ao carregar
