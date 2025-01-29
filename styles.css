@@ -76,74 +76,77 @@ header h1 {
     margin-top: 10px;
 }
 
-/* Estilo do coração interativo */
+/* Estilização da seção do coração */
 .coracao {
-    margin-top: 50px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 200px;
+    margin-top: 50px;
+    cursor: pointer;
 }
 
 /* Container do coração */
-.coracao-externo {
+.coracao-container {
     position: relative;
     width: 100px;
     height: 100px;
-    cursor: pointer;
-    transition: transform 0.5s ease-in-out;
 }
 
-/* Criando o coração com CSS puro */
-.coracao-externo::before,
-.coracao-externo::after {
-    content: "❤️";
+/* Criando as duas metades do coração */
+.coracao-esquerda,
+.coracao-direita {
     position: absolute;
-    font-size: 5rem;
+    width: 50px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50px 50px 0 0;
     top: 0;
     transition: transform 0.5s ease-in-out;
 }
 
-/* Metade esquerda do coração */
-.coracao-externo::before {
+/* Metade esquerda */
+.coracao-esquerda {
     left: 0;
-    transform-origin: right center;
+    transform: rotate(-45deg);
+    transform-origin: right bottom;
 }
 
-/* Metade direita do coração */
-.coracao-externo::after {
+/* Metade direita */
+.coracao-direita {
     right: 0;
-    transform-origin: left center;
+    transform: rotate(45deg);
+    transform-origin: left bottom;
 }
 
-/* Classe para dividir o coração */
-.coracao-externo.aberto::before {
-    transform: rotate(-20deg) translateX(-20px);
+/* Efeito de coração se partindo */
+.coracao.aberto .coracao-esquerda {
+    transform: rotate(-25deg) translateX(-50px);
 }
 
-.coracao-externo.aberto::after {
-    transform: rotate(20deg) translateX(20px);
+.coracao.aberto .coracao-direita {
+    transform: rotate(25deg) translateX(50px);
 }
 
-/* Mensagem dentro do coração */
-.coracao-interno {
-    display: none;
+/* Estilização da mensagem */
+.coracao-mensagem {
     position: absolute;
-    top: 120%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.9);
     padding: 15px;
     border-radius: 10px;
     border: 2px solid #e74c3c;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     width: 250px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.coracao-interno p {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #e74c3c;
-    font-weight: bold;
-    text-align: center;
+/* Mensagem aparece quando o coração abre */
+.coracao.aberto .coracao-mensagem {
+    opacity: 1;
 }
