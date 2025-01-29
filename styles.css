@@ -78,19 +78,20 @@ header h1 {
 
 /* Estilização da seção do coração */
 .coracao {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza o coração */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
-    margin-top: 50px;
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }
 
 .coracao-esquerda, .coracao-direita {
     font-size: 5rem;
     position: absolute;
-    top: 0;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -105,11 +106,11 @@ header h1 {
 
 /* Efeito de coração se partindo */
 .coracao.aberto .coracao-esquerda {
-    transform: translateX(-50px); /* Movendo para a esquerda */
+    transform: translateX(-200px); /* Movendo para a esquerda */
 }
 
 .coracao.aberto .coracao-direita {
-    transform: translateX(50px); /* Movendo para a direita */
+    transform: translateX(200px); /* Movendo para a direita */
 }
 
 /* Estilização da mensagem */
