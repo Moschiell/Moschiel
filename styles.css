@@ -82,13 +82,50 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px; /* Tamanho reduzido */
+    height: 150px;
     margin-top: 50px;
     cursor: pointer;
+    font-size: 5rem; /* Tamanho do emoji do coração */
 }
 
-/* Container do coração */
-.coracao-container {
-    position: relative;
-    width: 80px; /* Largura reduzida */
-    height: 80px; /*
+/* Metade do coração (simulando o emoji partido) */
+.coracao .coracao-esquerda,
+.coracao .coracao-direita {
+    position: absolute;
+    top: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Metade esquerda */
+.coracao .coracao-esquerda {
+    left: 0;
+    transform: scaleX(1);
+}
+
+/* Metade direita */
+.coracao .coracao-direita {
+    right: 0;
+    transform: scaleX(-1); /* Inverter a metade direita */
+}
+
+/* Efeito de coração se partindo */
+.coracao.aberto .coracao-esquerda {
+    transform: translateX(-50px); /* Movendo para a esquerda */
+}
+
+.coracao.aberto .coracao-direita {
+    transform: translateX(50px); /* Movendo para a direita */
+}
+
+/* Estilização da mensagem */
+.coracao-mensagem {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #e74c3c;
+    display: none;
+}
