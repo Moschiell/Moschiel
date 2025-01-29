@@ -1,39 +1,37 @@
-// Função para criar estrelas
-function criarEstrelas() {
-    const fundoEstrelado = document.getElementById('fundo-estrelado');
-    const numeroEstrelas = 100; // Número de estrelas
+// Configurar a data de início do namoro (ano, mês-1, dia, hora, minuto, segundo)
+const dataInicioNamoro = new Date(2025, 0, 5, 0, 0, 0); // 05 de janeiro de 2025, 00:00:00
 
-    for (let i = 0; i < numeroEstrelas; i++) {
-        const estrela = document.createElement('div');
-        estrela.className = 'estrela';
-        estrela.style.top = `${Math.random() * 100}%`;
-        estrela.style.left = `${Math.random() * 100}%`;
-        estrela.style.animationDelay = `${Math.random() * 5}s`;
-        fundoEstrelado.appendChild(estrela);
-    }
+// Atualiza o contador de tempo
+function atualizarContador() {
+    const agora = new Date();
+    let diferenca = agora - dataInicioNamoro; // Diferença em milissegundos
+
+    const segundos = Math.floor(diferenca / 1000) % 60;
+    const minutos = Math.floor(diferenca / (1000 * 60)) % 60;
+    const horas = Math.floor(diferenca / (1000 * 60 * 60)) % 24;
+    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+
+    // Atualiza o contador no HTML
+    const contadorElemento = document.getElementById('contador');
+    contadorElemento.textContent = `${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
 }
 
-// Adiciona estrelas ao carregar a página
-criarEstrelas();
+// Atualiza o contador a cada segundo
+setInterval(atualizarContador, 1000);
+atualizarContador(); // Chamada inicial
 
-// Função para abrir o coração
+// Função para animar o coração partindo ao meio
 function abrirCoracao() {
-    const coracaoInterno = document.getElementById('coracao-interno');
-    if (coracaoInterno.style.display === 'none' || coracaoInterno.style.display === '') {
-        coracaoInterno.style.display = 'block';
+    const coracao = document.querySelector('.coracao-externo');
+    const mensagem = document.getElementById('coracao-interno');
+
+    if (!coracao.classList.contains('aberto')) {
+        coracao.classList.add('aberto');
+        setTimeout(() => {
+            mensagem.style.display = 'block';
+        }, 500); // Mostra a mensagem após a animação
     } else {
-        coracaoInterno.style.display = 'none';
+        mensagem.style.display = 'none';
+        coracao.classList.remove('aberto');
     }
 }
-
-// Configurar a data de início do namoro (ano, mês-1, dia)
-const dataInicioNamoro = new Date(2025, 0, 5); // 05 de janeiro de 2025
-
-// Atualizar o contador
-const contadorElemento = document.getElementById('contador');
-contadorElemento.textContent = calcularTempoNamoro(dataInicioNamoro);
-
-// Atualizar o contador a cada minuto
-setInterval(() => {
-    contadorElemento.textContent = calcularTempoNamoro(dataInicioNamoro);
-}, 60000); // 60000 milissegundos = 1 minuto
