@@ -30,9 +30,12 @@
         </section>
 
         <!-- Coração Interativo -->
-        <section class="coracao">
-            <div class="coracao-externo" onclick="abrirCoracao()"></div>
-            <div class="coracao-interno" id="coracao-interno">
+        <section class="coracao" onclick="abrirCoracao()">
+            <div class="coracao-container">
+                <div class="coracao-esquerda"></div>
+                <div class="coracao-direita"></div>
+            </div>
+            <div class="coracao-mensagem" id="coracao-mensagem">
                 <p>Você é a pessoa mais especial da minha vida. Te amo!</p>
             </div>
         </section>
@@ -40,5 +43,6 @@
     </main>
 
     <script src="script.js"></script>
+
 </body>
 </html>
