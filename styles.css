@@ -83,6 +83,7 @@ header h1 {
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza o coração */
     display: flex;
+    flex-direction: column; /* Coloca os corações um em cima do outro */
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -91,17 +92,8 @@ header h1 {
 
 .coracao-esquerda, .coracao-direita {
     font-size: 6rem;
-    position: absolute;
+    position: relative;
     transition: transform 0.5s ease-in-out;
-}
-
-.coracao-esquerda {
-    left: -60px; /* Ajuste para o coração esquerdo ficar no centro */
-}
-
-.coracao-direita {
-    right: -60px; /* Ajuste para o coração direito ficar no centro */
-    transform: scaleX(-1); /* Inverter a metade direita */
 }
 
 /* Efeito de coração se partindo */
@@ -113,15 +105,4 @@ header h1 {
     transform: translateX(300px); /* Movendo para a direita */
 }
 
-/* Estilização da mensagem */
-.coracao-mensagem {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 15px;
-    border-radius: 10px;
-    border: 2px solid #e74c3c;
-    display: none;
-}
+/* Estilização
