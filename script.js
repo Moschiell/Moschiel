@@ -1,10 +1,7 @@
-// Configurar a data de início do namoro (ano, mês-1, dia, hora, minuto, segundo)
-const dataInicioNamoro = new Date(2025, 0, 5, 0, 0, 0); // 05 de janeiro de 2025, 00:00:00
-
-// Atualiza o contador de tempo
-function atualizarContador() {
+// Função para calcular o tempo de namoro
+function calcularTempoNamoro(dataInicio) {
     const agora = new Date();
-    let diferenca = agora - dataInicioNamoro; // Diferença em milissegundos
+    const diferenca = agora - dataInicio; // Diferença em milissegundos
 
     const segundos = Math.floor(diferenca / 1000) % 60;
     const minutos = Math.floor(diferenca / (1000 * 60)) % 60;
@@ -17,21 +14,13 @@ function atualizarContador() {
 }
 
 // Atualiza o contador a cada segundo
-setInterval(atualizarContador, 1000);
-atualizarContador(); // Chamada inicial
+setInterval(() => {
+    const dataInicioNamoro = new Date(2025, 0, 5, 0, 0, 0); // 05 de janeiro de 2025, 00:00:00
+    calcularTempoNamoro(dataInicioNamoro);
+}, 1000);
 
 // Função para animar o coração partindo ao meio
 function abrirCoracao() {
-    const coracao = document.querySelector('.coracao-externo');
-    const mensagem = document.getElementById('coracao-interno');
-
-    if (!coracao.classList.contains('aberto')) {
-        coracao.classList.add('aberto');
-        setTimeout(() => {
-            mensagem.style.display = 'block';
-        }, 500); // Mostra a mensagem após a animação
-    } else {
-        mensagem.style.display = 'none';
-        coracao.classList.remove('aberto');
-    }
+    const coracao = document.querySelector('.coracao');
+    coracao.classList.toggle('aberto'); // Alterna entre aberto e fechado
 }
