@@ -37,32 +37,11 @@ header h1 {
     margin-top: 20px;
 }
 
-/* Estilo da seção de fotos */
-.fotos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin: 30px 0;
-}
-
-.fotos img {
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;
-    object-fit: cover;
-    border: 2px solid #e74c3c;
-    transition: transform 0.3s ease-in-out;
-}
-
-.fotos img:hover {
-    transform: scale(1.1);
-}
-
 /* Estilo da contagem de tempo */
 .contagem h2 {
     font-size: 2rem;
     color: #e74c3c;
+    margin-bottom: 10px;
 }
 
 .contagem p {
@@ -79,30 +58,11 @@ header h1 {
 /* Estilização da seção do coração */
 .coracao {
     position: absolute;
-    top: 50%;
+    top: 60%; /* Coloca os corações abaixo da contagem */
     left: 50%;
-    transform: translate(-50%, -50%); /* Centraliza o coração */
+    transform: translateX(-50%); /* Centraliza */
     display: flex;
     flex-direction: column; /* Coloca os corações um em cima do outro */
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
-}
-
-.coracao-esquerda, .coracao-direita {
-    font-size: 6rem;
-    position: relative;
-    transition: transform 0.5s ease-in-out;
-}
-
-/* Efeito de coração se partindo */
-.coracao.aberto .coracao-esquerda {
-    transform: translateX(-300px); /* Movendo para a esquerda */
-}
-
-.coracao.aberto .coracao-direita {
-    transform: translateX(300px); /* Movendo para a direita */
-}
-
-/* Estilização
