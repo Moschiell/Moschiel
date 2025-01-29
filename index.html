@@ -7,36 +7,37 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Fundo estrelado -->
-    <div id="fundo-estrelado"></div>
 
-    <!-- Conteúdo do site -->
+    <!-- Cabeçalho -->
     <header>
         <h1>Nosso Amor</h1>
     </header>
 
-    <!-- Seção de Fotos -->
-    <section class="fotos">
-        <img src="foto1.jpg" alt="Foto 1">
-        <img src="foto2.jpg" alt="Foto 2">
-        <img src="foto3.jpg" alt="Foto 3">
-    </section>
+    <!-- Seção principal -->
+    <main>
 
-    <!-- Contagem de Tempo -->
-    <section class="contagem">
-        <h2>Estamos juntos há:</h2>
-        <p id="contador">Carregando...</p>
-    </section>
+        <!-- Seção de Fotos -->
+        <section class="fotos">
+            <img src="foto1.jpg" alt="Foto do casal">
+            <img src="foto2.jpg" alt="Foto do casal">
+            <img src="foto3.jpg" alt="Foto do casal">
+        </section>
 
-    <!-- Coração Interativo -->
-    <section class="coracao">
-        <div class="coracao-externo" onclick="abrirCoracao()">
-            ❤️
+        <!-- Contagem de Tempo -->
+        <section class="contagem">
+            <h2>Estamos juntos há:</h2>
+            <p id="contador">Carregando...</p>
+        </section>
+
+        <!-- Coração Interativo -->
+        <section class="coracao">
+            <div class="coracao-externo" onclick="abrirCoracao()"></div>
             <div class="coracao-interno" id="coracao-interno">
                 <p>Você é a pessoa mais especial da minha vida. Te amo!</p>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </main>
 
     <script src="script.js"></script>
 </body>
