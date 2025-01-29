@@ -97,14 +97,14 @@ header h1 {
     align-items: center;
 }
 
-/* Criando as duas metades do coração */
+/* Formato do coração */
 .coracao-esquerda,
 .coracao-direita {
     position: absolute;
-    width: 50px;
+    width: 100px;
     height: 100px;
     background-color: red;
-    border-radius: 50px 50px 0 0;
+    border-radius: 50%;
     top: 0;
     transition: transform 0.5s ease-in-out;
 }
@@ -125,11 +125,11 @@ header h1 {
 
 /* Efeito de coração se partindo */
 .coracao.aberto .coracao-esquerda {
-    transform: rotate(-25deg) translateX(-50px);
+    transform: rotate(-45deg) translateX(-50px);
 }
 
 .coracao.aberto .coracao-direita {
-    transform: rotate(25deg) translateX(50px);
+    transform: rotate(45deg) translateX(50px);
 }
 
 /* Estilização da mensagem */
