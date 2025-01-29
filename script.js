@@ -22,5 +22,15 @@ setInterval(() => {
 // Função para animar o coração partindo ao meio
 function abrirCoracao() {
     const coracao = document.querySelector('.coracao');
-    coracao.classList.toggle('aberto'); // Alterna entre aberto e fechado
+    const coracaoMensagem = document.getElementById('coracao-mensagem');
+    
+    // Alterna a classe "aberto" para o coração
+    coracao.classList.toggle('aberto');
+    
+    // Alterna a visibilidade da mensagem
+    if (coracao.classList.contains('aberto')) {
+        coracaoMensagem.style.display = 'block';
+    } else {
+        coracaoMensagem.style.display = 'none';
+    }
 }
