@@ -142,3 +142,5 @@ header h1 {
     padding: 15px;
     border-radius: 10px;
     border: 2px solid #e74c3c;
+    display: none;
+}
