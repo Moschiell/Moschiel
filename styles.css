@@ -82,7 +82,7 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 150px; /* Tamanho reduzido */
     margin-top: 50px;
     cursor: pointer;
 }
@@ -90,57 +90,5 @@ header h1 {
 /* Container do coração */
 .coracao-container {
     position: relative;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Formato do coração */
-.coracao-esquerda,
-.coracao-direita {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    border-radius: 50%;
-    top: 0;
-    transition: transform 0.5s ease-in-out;
-}
-
-/* Metade esquerda */
-.coracao-esquerda {
-    left: 0;
-    transform: rotate(-45deg);
-    transform-origin: right bottom;
-}
-
-/* Metade direita */
-.coracao-direita {
-    right: 0;
-    transform: rotate(45deg);
-    transform-origin: left bottom;
-}
-
-/* Efeito de coração se partindo */
-.coracao.aberto .coracao-esquerda {
-    transform: rotate(-45deg) translateX(-50px);
-}
-
-.coracao.aberto .coracao-direita {
-    transform: rotate(45deg) translateX(50px);
-}
-
-/* Estilização da mensagem */
-.coracao-mensagem {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 15px;
-    border-radius: 10px;
-    border: 2px solid #e74c3c;
-    display: none;
-}
+    width: 80px; /* Largura reduzida */
+    height: 80px; /*
