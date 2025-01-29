@@ -85,25 +85,20 @@ header h1 {
     height: 150px;
     margin-top: 50px;
     cursor: pointer;
-    font-size: 5rem; /* Tamanho do emoji do coração */
 }
 
-/* Metade do coração (simulando o emoji partido) */
-.coracao .coracao-esquerda,
-.coracao .coracao-direita {
+.coracao-esquerda, .coracao-direita {
+    font-size: 5rem;
     position: absolute;
     top: 0;
     transition: transform 0.5s ease-in-out;
 }
 
-/* Metade esquerda */
-.coracao .coracao-esquerda {
+.coracao-esquerda {
     left: 0;
-    transform: scaleX(1);
 }
 
-/* Metade direita */
-.coracao .coracao-direita {
+.coracao-direita {
     right: 0;
     transform: scaleX(-1); /* Inverter a metade direita */
 }
