@@ -27,14 +27,16 @@ function calcularTempoNamoro(dataInicio) {
 // Função para abrir o coração
 function abrirCoracao() {
     const coracao = document.querySelector('.coracao');
-    const coracaoMensagem = document.getElementById('coracao-mensagem');
+    const coracaoMensagem = document.querySelector('.coracao-mensagem');
     
+    // Alternar a classe aberto no coração para animar
+    coracao.classList.toggle('aberto');
+
+    // Mostrar ou esconder a mensagem
     if (coracao.classList.contains('aberto')) {
-        coracao.classList.remove('aberto');
-        coracaoMensagem.style.display = 'none';
-    } else {
-        coracao.classList.add('aberto');
         coracaoMensagem.style.display = 'block';
+    } else {
+        coracaoMensagem.style.display = 'none';
     }
 }
 
