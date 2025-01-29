@@ -1,15 +1,48 @@
+/* Fundo estrelado */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f9f9f9;
-    color: #333;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: #fff;
 }
 
+#fundo-estrelado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: -1;
+}
+
+/* Efeito de estrelas */
+#fundo-estrelado::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, transparent 0%, #000 100%);
+    animation: brilho 5s infinite;
+}
+
+@keyframes brilho {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Conteúdo do site */
 header h1 {
     font-size: 3rem;
     color: #e74c3c;
+    text-shadow: 0 0 10px #e74c3c;
 }
 
 .fotos {
@@ -30,11 +63,12 @@ header h1 {
 .contagem h2 {
     font-size: 2rem;
     color: #e74c3c;
+    text-shadow: 0 0 10px #e74c3c;
 }
 
 .contagem p {
     font-size: 1.5rem;
-    color: #333;
+    color: #fff;
 }
 
 .coracao {
@@ -45,6 +79,8 @@ header h1 {
     font-size: 3rem;
     cursor: pointer;
     position: relative;
+    color: #e74c3c;
+    text-shadow: 0 0 10px #e74c3c;
 }
 
 .coracao-interno {
@@ -53,16 +89,16 @@ header h1 {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
     border: 2px solid #e74c3c;
     border-radius: 10px;
     width: 200px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
 }
 
 .coracao-interno p {
     margin: 0;
     font-size: 1rem;
-    color: #333;
+    color: #fff;
 }
