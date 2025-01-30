@@ -1,15 +1,49 @@
-// Função para calcular o tempo passado desde o início do namoro
-function atualizarContagem() {
-    const dataInicio = new Date('2024-12-29'); // Data de início do namoro
+// Função para calcular o tempo de namoro
+function calcularTempoNamoro(dataInicio) {
     const agora = new Date();
-    const tempoPassado = agora - dataInicio; // Tempo em milissegundos
+    const diferenca = agora - dataInicio; // Diferença em milissegundos
 
-    const dias = Math.floor(tempoPassado / (1000 * 60 * 60 * 24)); // Calcula dias
-    const horas = Math.floor((tempoPassado % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Calcula horas
+    // Converter para unidades de tempo
+    const segundos = Math.floor(diferenca / 1000) % 60;
+    const minutos = Math.floor(diferenca / (1000 * 60)) % 60;
+    const horas = Math.floor(diferenca / (1000 * 60 * 60)) % 24;
+    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
 
-    document.getElementById('contador').textContent = `${dias} dias e ${horas} horas`;
+    return `${dias} Dias ${horas} Horas ${minutos} Minutos ${segundos} Segundos`;
 }
 
-// Atualiza a contagem a cada hora
-setInterval(atualizarContagem, 1000 * 60 * 60);
-atualizarContagem(); // Chama a função imediatamente para exibir ao carregar
+// Função para abrir o coração e exibir o balão de texto
+function abrirCoracao() {
+    const coracao = document.querySelector('.coracao-externo');
+    const balao = document.getElementById('coracao-interno');
+
+    coracao.classList.toggle('open'); // Alterna a classe do coração
+
+    if (coracao.classList.contains('open')) {
+        balao.style.display = 'block';
+        setTimeout(() => {
+            balao.style.opacity = '1'; // Faz o balão aparecer suavemente
+        }, 100);
+    } else {
+        balao.style.opacity = '0';
+        setTimeout(() => {
+            balao.style.display = 'none';
+        }, 500);
+    }
+}
+
+// Configurar a data de início do namoro (ano, mês-1, dia)
+const dataInicioNamoro = new Date(2025, 0, 5);
+
+// Atualizar o contador
+const contadorElemento = document.getElementById('contador');
+
+function atualizarContador() {
+    if (contadorElemento) {
+        contadorElemento.textContent = calcularTempoNamoro(dataInicioNamoro);
+    }
+}
+
+// Atualiza o contador imediatamente e a cada segundo
+atualizarContador();
+setInterval(atualizarContador, 1000);
