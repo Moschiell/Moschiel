@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosso 1 Mês</title>
+    <title>PARA A MULHER DA MINHA VIDA</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Nosso 1 Mês</h1>
+        <h1>Nosso Primeiro Mes</h1>
     </header>
 
-    <!-- Seção de Fotos -->
+    <!-- Seção de Vídeos (substituindo as imagens) -->
     <section class="fotos">
-        <img src="foto1.jpg" alt="Foto 1">
+        <!-- Substitui a foto1.jpg por um vídeo -->
+        <div class="video-container">
+            <video width="100%" height="auto" controls>
+                <source src="video1.mp4" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo.
+            </video>
+        </div>
+        
+        <!-- Foto 2 e Foto 3 permanecem como imagens -->
         <img src="foto2.jpg" alt="Foto 2">
         <img src="foto3.jpg" alt="Foto 3">
     </section>
@@ -21,7 +29,19 @@
     <!-- Contagem de Tempo -->
     <section class="contagem">
         <h2>Estamos juntos há:</h2>
-        <p id="contador">Carregando...</p>
+        <p id="contador"><strong>Carregando...</strong></p>
+    </section>
+
+    <!-- Coração Interativo -->
+    <section class="coracao">
+        <div class="coracao-externo" onclick="abrirCoracao()">
+            ❤️
+        </div>
+        <div class="coracao-interno" id="coracao-interno">
+            <p>
+                Amor da minha vida, eu amo muito você. Você foi a melhor coisa que me aconteceu, e cada momento ao seu lado é um presente. Sua presença ilumina meus dias, e seu sorriso é a minha paz. Eu sou imensamente grato por ter você comigo, compartilhando sonhos, risadas e amor. Nada no mundo se compara ao que sinto por você, e mal posso esperar para viver muitos outros momentos inesquecíveis ao seu lado. Você é e sempre será o meu grande amor.
+            </p>
+        </div>
     </section>
 
     <script src="script.js"></script>
