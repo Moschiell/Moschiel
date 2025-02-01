@@ -3,46 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Celebrando 1 mês de namoro com a mulher da minha vida!">
     <title>PARA A MULHER DA MINHA VIDA</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Nosso Primeiro Mes</h1>
+        <h1>1 Mês de Namoro</h1>
     </header>
 
-    <!-- Seção de Vídeos (substituindo as imagens) -->
+    <!-- Seção de Fotos e Vídeos -->
     <section class="fotos">
-        <!-- Substitui a foto1.jpg por um vídeo -->
         <div class="video-container">
-            <video width="100%" height="auto" controls>
+            <video width="100%" height="auto" autoplay loop muted>
                 <source src="video1.mp4" type="video/mp4">
                 Seu navegador não suporta a tag de vídeo.
             </video>
         </div>
-        
-        <!-- Foto 2 e Foto 3 permanecem como imagens -->
-        <img src="foto2.jpg" alt="Foto 2">
-        <img src="foto3.jpg" alt="Foto 3">
+        <img src="foto2.jpg" alt="Nossa foto juntos">
+        <div class="video-container">
+            <video width="100%" height="auto" autoplay loop muted>
+                <source src="video2.mp4" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo.
+            </video>
+        </div>
     </section>
 
-    <!-- Contagem de Tempo -->
+    <!-- Seção de Contagem de Tempo -->
     <section class="contagem">
         <h2>Estamos juntos há:</h2>
         <p id="contador"><strong>Carregando...</strong></p>
     </section>
 
+    <!-- Seção de Quiz -->
+    <section class="quiz">
+        <h2>Quiz do Nosso Amor</h2>
+        <div id="pergunta"></div>
+        <div id="respostas"></div>
+        <p id="resultado-quiz"></p>
+    </section>
+
+    <!-- Seção de Planos Futuros -->
+    <section class="planos-futuros">
+        <h2>Nossos Planos para o Futuro</h2>
+        <div class="planos-container">
+            <div class="plano">
+                <span>🏡</span>
+                <p>Construir nossa casa juntos.</p>
+            </div>
+            <div class="plano">
+                <span>✈️</span>
+                <p>Viajar pelo mundo.</p>
+            </div>
+            <div class="plano">
+                <span>🧔🏽‍♂👩🏻👶🏽</span>
+                <p>Ter uma familia linda.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Coração Interativo -->
     <section class="coracao">
-        <div class="coracao-externo" onclick="abrirCoracao()">
+        <div class="aviso-coracao">Clique no coração!</div> <!-- Aviso adicionado aqui -->
+        <div class="coracao-externo" onclick="abrirCoracao()" aria-label="Coração que abre uma mensagem">
             ❤️
         </div>
         <div class="coracao-interno" id="coracao-interno">
-            <p>
-                Amor da minha vida, eu amo muito você. Você foi a melhor coisa que me aconteceu, e cada momento ao seu lado é um presente. Sua presença ilumina meus dias, e seu sorriso é a minha paz. Eu sou imensamente grato por ter você comigo, compartilhando sonhos, risadas e amor. Nada no mundo se compara ao que sinto por você, e mal posso esperar para viver muitos outros momentos inesquecíveis ao seu lado. Você é e sempre será o meu grande amor.
-            </p>
+            <p id="texto-coracao"></p>
         </div>
     </section>
+
+    <!-- Seção de Agradecimento -->
+    <section class="agradecimento">
+        <h2>Obrigado por Tudo</h2>
+        <p>Amor da minha vida, obrigado por cada momento ao seu lado. Você é a razão da minha felicidade e mal posso esperar para viver muitos outros momentos inesquecíveis com você. Eu te amo!</p>
+    </section>
+
+    <!-- Botão de Surpresa -->
+    <button id="botao-surpresa">Clique para uma surpresa!</button>
 
     <script src="script.js"></script>
 </body>
