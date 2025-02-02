@@ -96,7 +96,7 @@ function verificarResposta(respostaIndex) {
         if (perguntaAtual < perguntas.length) {
             setTimeout(carregarPergunta, 1500);
         } else {
-            resultadoQuizElemento.textContent = "Quiz concluído! Obrigado por jogar. ❤️";
+            resultadoQuizElemento.textContent =  "Fico feliz da senhora lembrar ❤️";
         }
     } else {
         resultadoQuizElemento.textContent = "Resposta errada. Tente novamente! 😢";
