@@ -23,7 +23,7 @@ function abrirCoracao() {
         balao.style.display = 'block';
         setTimeout(() => {
             balao.style.opacity = '1';
-            digitarMensagemCoração(); // Inicia o efeito de digitação no coração
+            digitarMensagemCoração();
         }, 100);
     } else {
         coracao.style.animation = 'bater 1s infinite';
@@ -56,17 +56,22 @@ const perguntas = [
     {
         pergunta: "Onde foi nosso primeiro encontro?",
         respostas: ["No parque", "No shopping", "Em show"],
-        respostaCorreta: 1, // Resposta correta: "No shopping"
+        respostaCorreta: 1,
     },
     {
         pergunta: "Onde nos conhecemos?",
         respostas: ["Instagram", "Jogos", "Aplicativo de relacionamento"],
-        respostaCorreta: 2, // Resposta correta: "Aplicativo de relacionamento"
+        respostaCorreta: 2,
     },
     {
         pergunta: "Onde foi nosso primeiro beijo?",
         respostas: ["No shopping", "No parque", "Na sua casa"],
-        respostaCorreta: 2, // Resposta correta: "Na sua casa"
+        respostaCorreta: 2,
+    },
+      {
+        pergunta: "Quando eu te dei a aliança ?",
+        respostas: ["05/01", "12/01", "31/12"],
+        respostaCorreta: 0,
     },
 ];
 
@@ -96,7 +101,7 @@ function verificarResposta(respostaIndex) {
         if (perguntaAtual < perguntas.length) {
             setTimeout(carregarPergunta, 1500);
         } else {
-            resultadoQuizElemento.textContent =  "Fico feliz da senhora lembrar ❤️";
+            resultadoQuizElemento.textContent = "Fico feliz da senhora lembrar ❤️";
         }
     } else {
         resultadoQuizElemento.textContent = "Resposta errada. Tente novamente! 😢";
@@ -113,29 +118,21 @@ let indexCoração = 0;
 let intervaloDigitação;
 
 function digitarMensagemCoração() {
-    // Reinicia o texto e o índice ao abrir o coração
     textoCoraçãoElemento.textContent = '';
     indexCoração = 0;
 
-    // Inicia o efeito de digitação
     intervaloDigitação = setInterval(() => {
         if (indexCoração < textoCoração.length) {
             textoCoraçãoElemento.textContent += textoCoração.charAt(indexCoração);
             indexCoração++;
         } else {
-            clearInterval(intervaloDigitação); // Para o efeito quando o texto terminar
+            clearInterval(intervaloDigitação);
         }
-    }, 75); // Velocidade da digitação (100ms)
-}
-
-// Função para fechar o coração e parar a digitação
-function fecharCoração() {
-    clearInterval(intervaloDigitação); // Para o efeito de digitação
-    textoCoraçãoElemento.textContent = ''; // Limpa o texto
+    }, 75);
 }
 
 // Botão de surpresa
 const botaoSurpresa = document.getElementById('botao-surpresa');
 botaoSurpresa.addEventListener('click', () => {
-    alert("Surpresa! Eu te amo mais do que tudo! ❤️");
+    alert("Quando finalmente eu irei poder dormir com a dona? 🥺");
 });
