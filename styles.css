@@ -125,41 +125,39 @@ video {
 
 .coracao {
     margin-top: 150px;
-    margin-bottom: 850px; /* Espaço extra para o balão de texto */
+    margin-bottom: 895px;
     display: inline-block;
     position: relative;
 }
 
-/* Aviso para clicar no coração */
 .aviso-coracao {
     position: absolute;
-    top: -150px; /* Posiciona o aviso acima do coração */
+    top: -150px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 1.5rem;
     color: #e74c3c;
     font-weight: bold;
-    animation: piscar 1s infinite 0.5s; /* Efeito de piscar suave */
+    animation: piscar 1s infinite 0.5s;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Seta apontando para o coração */
 .aviso-coracao::after {
     content: '';
     width: 0;
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 15px solid #e74c3c; /* Cor da seta */
-    margin-top: 10px; /* Espaço entre o texto e a seta */
+    border-top: 15px solid #e74c3c;
+    margin-top: 10px;
 }
 
 @keyframes piscar {
-    0% { opacity: 1; } /* Opacidade total no início */
-    50% { opacity: 0; } /* Opacidade reduzida no meio */
-    100% { opacity: 1; } /* Opacidade total no final */
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .coracao-externo {
@@ -182,7 +180,7 @@ video {
 .coracao-interno {
     display: none;
     position: absolute;
-    top: 100%; /* Posiciona o balão abaixo do coração */
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     background-color: #000;
@@ -198,7 +196,7 @@ video {
     line-height: 1.6;
     opacity: 0;
     transition: opacity 0.5s ease;
-    z-index: 2; /* Garante que o balão fique acima de outros elementos */
+    z-index: 2;
 }
 
 .coracao-interno::before {
@@ -270,6 +268,8 @@ video {
     background-color: #fff;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    color: #e74c3c;
+    font-weight: bold;
 }
 
 #botao-surpresa:hover {
