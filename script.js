@@ -35,7 +35,7 @@ function abrirCoracao() {
 }
 
 // Configurar a data de início do namoro
-const dataInicioNamoro = new Date(2025, 0, 5);
+const dataInicioNamoro = new Date(2025, 0, 5); // Certifique-se de que a data está correta
 
 // Atualizar o contador
 const contadorElemento = document.getElementById('contador');
@@ -68,8 +68,8 @@ const perguntas = [
         respostas: ["No shopping", "No parque", "Na sua casa"],
         respostaCorreta: 2,
     },
-      {
-        pergunta: "Quando eu te dei a aliança ?",
+    {
+        pergunta: "Quando eu te dei a aliança?",
         respostas: ["05/01", "12/01", "31/12"],
         respostaCorreta: 0,
     },
@@ -134,5 +134,5 @@ function digitarMensagemCoração() {
 // Botão de surpresa
 const botaoSurpresa = document.getElementById('botao-surpresa');
 botaoSurpresa.addEventListener('click', () => {
-    alert("Quando finalmente eu irei poder dormir com a dona? 🥺");
+    window.location.href = "https://aceita-ser-minha-noiva.netlify.app/";
 });
